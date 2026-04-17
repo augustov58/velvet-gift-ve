@@ -3,166 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velvet Gift VE | Papelería Creativa</title>
+  <title>Velvet Gift VE | Papelería Creativa en Maracaibo</title>
+  <meta name="description" content="Papelería creativa personalizada en Maracaibo, Venezuela. Cake toppers, cajas, stickers y más para tus celebraciones especiales.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      /* Instagram gradient colors */
       --ig-pink: #E1306C;
       --ig-purple: #833AB4;
       --ig-orange: #FCAF45;
-      --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-      --cream: #fdf6f0;
-      --gold: #c9a959;
-      --charcoal: #2d2d2d;
-      --text: #4a4a4a;
+      --rose: #f4a5b5;
+      --rose-dark: #d4708a;
+      --cream: #FFF9F5;
+      --gold: #D4AF37;
+      --charcoal: #2C2C2C;
+      --text: #5a5a5a;
+      --white: #ffffff;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
+    html { scroll-behavior: smooth; }
+    
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       background: var(--cream);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
     
-    /* Hero Section */
+    /* ===== HERO ===== */
     .hero {
-      background: var(--ig-gradient);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FF6B9D 0%, #C44569 50%, #6B2D5C 100%);
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
     
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.3;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
     }
     
     .hero-content {
-      position: relative;
+      text-align: center;
+      color: white;
       z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 40px 20px;
+      max-width: 600px;
+      animation: fadeInUp 1s ease;
     }
     
-    /* Instagram-style profile circle */
-    .profile-container {
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Profile Image with animated ring */
+    .profile-wrapper {
       position: relative;
-      width: 150px;
-      height: 150px;
-      margin: 0 auto 25px;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 30px;
     }
     
     .profile-ring {
       position: absolute;
-      inset: -4px;
-      background: var(--ig-gradient);
+      inset: -6px;
+      background: conic-gradient(from 0deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
       border-radius: 50%;
-      padding: 4px;
+      animation: spin 8s linear infinite;
     }
     
-    .profile-pic {
-      width: 150px;
-      height: 150px;
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    .profile-img {
+      position: relative;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 5px solid white;
       object-fit: cover;
-      background: white;
+      display: block;
     }
     
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: clamp(2.5rem, 8vw, 4rem);
       font-weight: 700;
-      margin-bottom: 8px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      margin-bottom: 5px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
     
     .hero .handle {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 500;
-      opacity: 0.95;
+      opacity: 0.9;
       margin-bottom: 15px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
     
     .hero .tagline {
-      font-size: 1.15rem;
-      font-weight: 300;
-      opacity: 0.9;
+      font-size: 1.3rem;
+      font-weight: 400;
       margin-bottom: 20px;
+      opacity: 0.95;
     }
     
     .hero .bio {
-      font-size: 1rem;
-      max-width: 500px;
-      margin: 0 auto 25px;
-      opacity: 0.95;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 450px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
     }
     
-    .hero-stats {
+    /* Stats */
+    .stats {
       display: flex;
       justify-content: center;
-      gap: 50px;
-      margin-top: 30px;
+      gap: 40px;
+      margin-bottom: 35px;
     }
     
     .stat {
       text-align: center;
     }
     
-    .stat-number {
+    .stat-num {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       font-weight: 700;
+      display: block;
     }
     
     .stat-label {
       font-size: 0.85rem;
-      opacity: 0.85;
       text-transform: uppercase;
       letter-spacing: 1px;
+      opacity: 0.8;
     }
     
-    /* Instagram-style highlight bar */
-    .highlight-bar {
+    /* CTA Button */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--rose-dark);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+    
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      opacity: 0.7;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+    
+    /* ===== HIGHLIGHTS BAR ===== */
+    .highlights {
+      background: white;
+      padding: 25px 15px;
       display: flex;
       justify-content: center;
-      gap: 25px;
-      padding: 20px;
-      background: white;
-      border-bottom: 1px solid #eee;
+      gap: 30px;
       overflow-x: auto;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
     
-    .highlight-item {
+    .highlight {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      min-width: 70px;
+      min-width: 80px;
     }
     
     .highlight-circle {
-      width: 65px;
-      height: 65px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-      background: var(--ig-gradient);
-      padding: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(45deg, #FF6B9D, #6B2D5C);
+      padding: 4px;
+      transition: transform 0.3s;
     }
     
-    .highlight-circle-inner {
+    .highlight:hover .highlight-circle { transform: scale(1.1); }
+    
+    .highlight-inner {
       width: 100%;
       height: 100%;
       border-radius: 50%;
@@ -170,24 +228,38 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     
     .highlight-label {
       font-size: 0.75rem;
       color: var(--text);
       text-align: center;
-      max-width: 70px;
-      overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
     }
     
-    /* Contact Bar */
-    .contact-bar {
-      background: var(--charcoal);
-      color: white;
-      padding: 15px 20px;
+    /* ===== ABOUT SECTION ===== */
+    .about {
+      padding: 80px 20px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--charcoal);
+      margin-bottom: 15px;
+    }
+    
+    .about p {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 30px;
+    }
+    
+    .contact-row {
       display: flex;
       justify-content: center;
       gap: 30px;
@@ -198,468 +270,493 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.95rem;
-    }
-    
-    .contact-item a {
-      color: var(--ig-pink);
+      color: var(--text);
       text-decoration: none;
       transition: color 0.3s;
     }
     
-    .contact-item a:hover {
-      color: var(--ig-orange);
+    .contact-item:hover { color: var(--rose-dark); }
+    
+    /* ===== PRODUCTS GRID ===== */
+    .products {
+      padding: 40px 0 80px;
     }
     
-    /* Products Section */
-    .products-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    
-    /* Instagram-style section header */
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-    
-    .section-line {
-      flex: 1;
-      max-width: 100px;
-      height: 1px;
-      background: #ddd;
-    }
-    
-    .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--charcoal);
+    .products-header {
+      text-align: center;
+      padding: 0 20px 40px;
     }
     
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 25px;
+      padding: 0 20px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
     
+    /* Product Card */
     .product-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
     
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
     }
     
-    /* Instagram-style image container */
-    .product-image-container {
+    /* Image Container */
+    .product-img-wrap {
       position: relative;
       width: 100%;
       aspect-ratio: 1;
-      background: #f0f0f0;
       overflow: hidden;
+      background: #f5f0eb;
     }
     
-    .product-image {
+    .product-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
+      transition: transform 0.5s;
     }
     
+    .product-card:hover .product-img { transform: scale(1.05); }
+    
     /* Multi-image grid */
-    .product-images-grid {
+    .multi-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
+      gap: 3px;
       height: 100%;
     }
     
-    .product-images-grid .product-image {
+    .multi-grid .product-img {
       width: 100%;
       height: 100%;
     }
     
-    /* Carousel indicator */
-    .carousel-indicator {
+    /* Image count badge */
+    .img-count {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
+      bottom: 12px;
+      right: 12px;
       background: rgba(0,0,0,0.6);
       color: white;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 20px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       gap: 5px;
     }
     
-    /* Instagram-style likes/comments */
-    .product-actions {
-      display: flex;
-      gap: 15px;
-      padding: 12px 15px;
-      border-bottom: 1px solid #efefef;
-    }
-    
-    .action-btn {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      color: var(--text);
-      font-size: 0.9rem;
-    }
-    
-    .action-btn.heart {
-      color: var(--ig-pink);
-    }
-    
-    .product-content {
-      padding: 15px;
+    /* Product Info */
+    .product-info {
+      padding: 20px;
     }
     
     .product-caption {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.6;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      margin-bottom: 15px;
+    }
+    
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid #f0f0f0;
+    }
+    
+    .product-stats {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .product-stat {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.85rem;
+      color: var(--text);
     }
     
     .product-date {
-      font-size: 0.75rem;
-      color: #999;
-      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #aaa;
     }
     
-    /* CTA Section */
+    /* ===== CTA SECTION ===== */
     .cta-section {
-      background: var(--ig-gradient);
-      color: white;
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+      padding: 100px 20px;
       text-align: center;
+      color: white;
     }
     
     .cta-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
     }
     
     .cta-section p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       opacity: 0.9;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    .cta-button {
+    .cta-btn-outline {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: white;
-      color: var(--ig-pink);
-      padding: 15px 35px;
-      border-radius: 30px;
+      color: var(--rose-dark);
+      padding: 18px 40px;
+      border-radius: 50px;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    .cta-btn-outline:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     }
     
-    /* Footer */
+    /* ===== FOOTER ===== */
     footer {
       background: var(--charcoal);
       color: white;
-      padding: 30px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
     
-    footer .ig-icon {
+    .footer-ig {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    
+    footer h3 {
+      font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin-bottom: 10px;
     }
     
     footer p {
-      opacity: 0.7;
-      font-size: 0.9rem;
+      opacity: 0.6;
+      font-size: 0.95rem;
     }
     
     footer a {
-      color: var(--ig-pink);
+      color: var(--rose);
+      text-decoration: none;
     }
     
-    /* Responsive */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
-      .hero { padding: 50px 15px; }
-      .hero h1 { font-size: 1.8rem; }
-      .hero-stats { gap: 30px; }
-      .stat-number { font-size: 1.6rem; }
-      .contact-bar { gap: 15px; font-size: 0.85rem; }
-      .products-grid { grid-template-columns: 1fr; gap: 20px; }
-      .cta-section { padding: 50px 15px; }
-      .cta-section h2 { font-size: 1.6rem; }
+      .stats { gap: 25px; }
+      .stat-num { font-size: 1.7rem; }
+      .products-grid { grid-template-columns: 1fr; }
+      .highlights { gap: 20px; }
+      .highlight-circle { width: 60px; height: 60px; font-size: 1.4rem; }
+    }
+    
+    /* ===== LOADING STATE ===== */
+    .product-img.loading {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
-      <div class="profile-container">
+      <div class="profile-wrapper">
         <div class="profile-ring"></div>
-        <img src="https://scontent-lga3-1.cdninstagram.com/v/t51.82787-19/640411641_18037611329566703_5152187847117024302_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2gGzwutFY2Yv7tCe_WXZdQwuNgPPgWwceq2EUYxRrSb1Iqbc6CVioA2g6_GQhgtq8Ro&_nc_ohc=xPPHtnPrKBQQ7kNvwEfn3B4&_nc_gid=ziqzxhSEZbXxw7F6YV6zxg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0iYp5DpufcBGAJpk06pEdhN92E2nwYPTJ1C4jxdvQYYg&oe=69E8755B&_nc_sid=8b3546" alt="Velvet Gift VE" class="profile-pic">
+        <img 
+          src="https://scontent-lga3-1.cdninstagram.com/v/t51.82787-19/640411641_18037611329566703_5152187847117024302_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2gGzwutFY2Yv7tCe_WXZdQwuNgPPgWwceq2EUYxRrSb1Iqbc6CVioA2g6_GQhgtq8Ro&_nc_ohc=xPPHtnPrKBQQ7kNvwEfn3B4&_nc_gid=ziqzxhSEZbXxw7F6YV6zxg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0iYp5DpufcBGAJpk06pEdhN92E2nwYPTJ1C4jxdvQYYg&oe=69E8755B&_nc_sid=8b3546" 
+          alt="Velvet Gift VE" 
+          class="profile-img"
+        >
       </div>
+      
       <h1>Velvet Gift VE</h1>
       <p class="handle">@velvetgift.ve</p>
       <p class="tagline">Christine Yari | Papelería Creativa</p>
-      <p class="bio">🌸 Papelería Creativa & algo más...<br>Mamá emprendedora 👩👧<br>📍5 de Julio con El Milagro, Mcbo. Venezuela 🇻🇪</p>
-      <div class="hero-stats">
+      <p class="bio">
+        🌸 Papelería Creativa & algo más<br>
+        Mamá emprendedora 👩👧<br>
+        📍 Maracaibo, Venezuela 🇻🇪
+      </p>
+      
+      <div class="stats">
         <div class="stat">
-          <div class="stat-number">247</div>
-          <div class="stat-label">Seguidores</div>
+          <span class="stat-num">247</span>
+          <span class="stat-label">Seguidores</span>
         </div>
         <div class="stat">
-          <div class="stat-number">19</div>
-          <div class="stat-label">Publicaciones</div>
+          <span class="stat-num">19</span>
+          <span class="stat-label">Publicaciones</span>
         </div>
         <div class="stat">
-          <div class="stat-number">416</div>
-          <div class="stat-label">Siguiendo</div>
+          <span class="stat-num">416</span>
+          <span class="stat-label">Siguiendo</span>
         </div>
       </div>
+      
+      <a href="https://wa.me/584246878613" class="cta-btn">
+        📱 WhatsApp
+      </a>
+    </div>
+    
+    <div class="scroll-hint">
+      <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
     </div>
   </header>
 
-  <!-- Instagram-style Highlights -->
-  <div class="highlight-bar">
-    <div class="highlight-item">
+  <!-- HIGHLIGHTS -->
+  <div class="highlights">
+    <div class="highlight">
       <div class="highlight-circle">
-        <div class="highlight-circle-inner">🎂</div>
+        <div class="highlight-inner">🎂</div>
       </div>
-      <span class="highlight-label">Toppers</span>
+      <span class="highlight-label">Cake Toppers</span>
     </div>
-    <div class="highlight-item">
+    <div class="highlight">
       <div class="highlight-circle">
-        <div class="highlight-circle-inner">📦</div>
+        <div class="highlight-inner">📦</div>
       </div>
       <span class="highlight-label">Cajas</span>
     </div>
-    <div class="highlight-item">
+    <div class="highlight">
       <div class="highlight-circle">
-        <div class="highlight-circle-inner">🏷️</div>
+        <div class="highlight-inner">🏷️</div>
       </div>
       <span class="highlight-label">Stickers</span>
     </div>
-    <div class="highlight-item">
+    <div class="highlight">
       <div class="highlight-circle">
-        <div class="highlight-circle-inner">🎁</div>
+        <div class="highlight-inner">🎁</div>
       </div>
       <span class="highlight-label">Kits</span>
     </div>
-    <div class="highlight-item">
+    <div class="highlight">
       <div class="highlight-circle">
-        <div class="highlight-circle-inner">🧁</div>
+        <div class="highlight-inner">🧁</div>
       </div>
       <span class="highlight-label">Cupcakes</span>
     </div>
   </div>
 
-  <!-- Contact Bar -->
-  <div class="contact-bar">
-    <div class="contact-item">
-      📍 Maracaibo, Edo. Zulia, Venezuela
+  <!-- ABOUT -->
+  <section class="about">
+    <h2 class="section-title">Sobre Nosotros</h2>
+    <p>
+      Creamos piezas personalizadas para hacer de cada celebración un momento especial. 
+      Cada detalle está hecho con mucho amor y dedicación en Maracaibo, Venezuela. 🎨💖
+    </p>
+    <div class="contact-row">
+      <a href="https://wa.me/584246878613" class="contact-item">
+        📱 0424-687.8613
+      </a>
+      <a href="https://www.instagram.com/velvetgift.ve" class="contact-item">
+        📸 @velvetgift.ve
+      </a>
     </div>
-    <div class="contact-item">
-      📱 <a href="https://wa.me/584246878613">0424-687.8613</a>
-    </div>
-    <div class="contact-item">
-      📸 <a href="https://www.instagram.com/velvetgift.ve">@velvetgift.ve</a>
-    </div>
-  </div>
+  </section>
 
-  <!-- Products Section -->
-  <section class="products-section">
-    <div class="section-header">
-      <div class="section-line"></div>
-      <span class="section-title">Publicaciones</span>
-      <div class="section-line"></div>
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="products-header">
+      <h2 class="section-title">Nuestras Creaciones</h2>
+      <p>Cada pieza es única y personalizada con amor ✨</p>
     </div>
     
     <div class="products-grid" id="productsGrid">
-      <!-- Products will be loaded here -->
+      <!-- Products injected by JS -->
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="cta-section">
-    <h2>¿Tienes una idea en mente?</h2>
-    <p>Contáctame al DM o WhatsApp para cotizaciones y pedidos personalizados</p>
-    <a href="https://wa.me/584246878613" class="cta-button">
-      📱 Escríbeme
+    <h2>¿Tienes una idea especial?</h2>
+    <p>Contáctame para cotizaciones y hagamos realidad tu próxima celebración</p>
+    <a href="https://wa.me/584246878613" class="cta-btn-outline">
+      📱 Escríbeme por WhatsApp
     </a>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <div class="ig-icon">📸</div>
-    <p>© 2026 <a href="https://www.instagram.com/velvetgift.ve">@velvetgift.ve</a></p>
-    <p style="margin-top: 8px; opacity: 0.5;">Hecho con ❤️ en Maracaibo, Venezuela</p>
+    <div class="footer-ig">📸</div>
+    <h3>Velvet Gift VE</h3>
+    <p>
+      <a href="https://www.instagram.com/velvetgift.ve">@velvetgift.ve</a> | 
+      <a href="https://wa.me/584246878613">WhatsApp</a>
+    </p>
+    <p style="margin-top: 15px; opacity: 0.4;">
+      © 2026 Hecho con ❤️ en Maracaibo, Venezuela
+    </p>
   </footer>
 
   <script>
-    // Product data from Instagram
     const posts = [
       {
         id: "3876037430609264132",
-        type: "Sidecar",
-        caption: "Los detalles que hacen la diferencia. ✨ Desliza para ver de cerca este topper y su caja personalizada. Hechos con mucho amor para una celebración especial. 🎨💖",
+        type: "multi",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670414129_18046937012566703_8540132605035507567_n.webp",
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670483738_18046937024566703_5217845477232801541_n.webp",
-          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670599586_18046937033566703_8668199145167773659_n.webp"
+          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670599586_18046937033566703_8668199145167773659_n.webp",
+          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670876657_18046937042566703_2352740074329137228_n.webp"
         ],
+        caption: "Los detalles que hacen la diferencia. ✨ Desliza para ver de cerca este topper y su caja personalizada. Hechos con mucho amor para una celebración especial. 🎨💖",
         likes: 14,
-        timestamp: "2026-04-15"
+        date: "15 Abr 2026"
       },
       {
         id: "3875195064461677445",
-        type: "Sidecar",
-        caption: "El toque final que tu torta estaba esperando... ✨🍰 Diseños exclusivos, cortes precisos y mucho amor en cada capa.",
+        type: "multi",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670266375_18046747760566703_1109992676525393162_n.webp",
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670781040_18046747775566703_9189571073831299893_n.webp",
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/670320318_18046747784566703_2006955029496603543_n.webp"
         ],
+        caption: "El toque final que tu torta estaba esperando... ✨🍰 Diseños exclusivos, cortes precisos y mucho amor en cada capa.",
         likes: 9,
-        timestamp: "2026-04-14"
+        date: "14 Abr 2026"
       },
       {
         id: "3872473714428287499",
-        type: "Image",
-        caption: "Etiquetas pyme/emprendedores 💫 Consulta lo que necesites, estoy dispuesta a ayudarte. Siiii tomo pedidos para ayer 😅🤭",
+        type: "single",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/669621591_18046174574566703_7059905910587474738_n.webp"
         ],
+        caption: "Etiquetas pyme/emprendedores 💫 Consulta lo que necesites! Siiii tomo pedidos para ayer 😅🤭",
         likes: 3,
-        timestamp: "2026-04-10"
+        date: "10 Abr 2026"
       },
       {
         id: "3871054034505393204",
-        type: "Image",
-        caption: "Les desbloqueo una nueva necesidad para las niñas grandes 😜🤭 Personalizando la caja de esta Barbie 🎀",
+        type: "single",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/662851581_18045856790566703_8029700031208688416_n.webp"
         ],
+        caption: "Personalizando la caja de esta Barbie para una bella niña grande 😜🤭🎀",
         likes: 8,
-        timestamp: "2026-04-08"
+        date: "8 Abr 2026"
       },
       {
         id: "3870080314794913069",
-        type: "Sidecar",
-        caption: "¡¡¡Kit cumpleaños!!! Promociones válidas por tiempo limitado 😜 Nada más lindo que personalizado! 😍🥺",
+        type: "multi",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/658883417_18045615971566703_5418106456930530236_n.webp",
-          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/660468945_18045615980566703_2250040297245146401_n.webp",
-          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/659768900_18045615989566703_8357764642774320015_n.webp"
+          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/660468945_18045615980566703/2250040297245146401_n.webp",
+          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/659768900_18045615989566703/8357764642774320015_n.webp"
         ],
+        caption: "¡¡¡Kit cumpleaños!!! Promociones válidas por tiempo limitado 😜 Nada más lindo que personalizado! 😍🥺",
         likes: 29,
-        timestamp: "2026-04-07"
+        date: "7 Abr 2026"
       },
       {
         id: "3862912978236586624",
-        type: "Image",
-        caption: "Tienes un emprendimiento y quieres tener stickers personalizados? ✨️",
+        type: "single",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/658442797_18043892717566703_3993824344277690261_n.webp"
         ],
+        caption: "Tienes un emprendimiento y quieres tener stickers personalizados? ✨️",
         likes: 14,
-        timestamp: "2026-03-28"
+        date: "28 Mar 2026"
       },
       {
         id: "3861388525321145686",
-        type: "Image",
-        caption: "Toppers! Dale un toque especial y diferente a esa torta! 😎 Disponibilidad inmediata con cualquier edad!! 💫✨️",
+        type: "single",
         images: [
-          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/655918828_18043468382566703_3555340929164965022_n.webp"
+          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/655918828_18043468382566703/3555340929164965022_n.webp"
         ],
+        caption: "Toppers! Dale un toque especial y diferente a esa torta! 😎 Disponibilidad inmediata 💫✨️",
         likes: 6,
-        timestamp: "2026-03-26"
+        date: "26 Mar 2026"
       },
       {
         id: "3861385447675120104",
-        type: "Image",
-        caption: "Y esto que???!!! Hermosos porta ponquesitos/cupcake! Son tan lindos para decorar la mesa o para regalar! 🫰 ❤️🩹✨️",
+        type: "single",
         images: [
           "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/656452651_18043467539566703_9089704282475435361_n.webp"
         ],
+        caption: "Hermosos porta ponquesitos/cupcake! Son tan lindos para decorar la mesa o para regalar! 🫰 ❤️🩹✨️",
         likes: 7,
-        timestamp: "2026-03-26"
+        date: "26 Mar 2026"
       },
       {
         id: "3860875924464028313",
-        type: "Image",
-        caption: "Stickers para cotillón. El preferido de muchos!!! Perfecto para la bolsita de cotillón 😎☺️ ✨️☀️",
+        type: "single",
         images: [
-          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/658599143_18043324901566703_1188504697026548187_n.webp"
+          "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/658599143_18043324901566703/1188504697026548187_n.webp"
         ],
+        caption: "Stickers para cotillón. El preferido de muchos!!! Perfecto para la bolsita de cotillón 😎☺️",
         likes: 5,
-        timestamp: "2026-03-25"
+        date: "25 Mar 2026"
       }
     ];
 
     function renderProducts() {
       const grid = document.getElementById('productsGrid');
+      
       grid.innerHTML = posts.map(post => {
-        const date = new Date(post.timestamp).toLocaleDateString('es-ES', { 
-          day: 'numeric', 
-          month: 'short',
-          year: 'numeric'
-        });
-        
-        const isCarousel = post.images.length > 1;
-        const firstImage = post.images[0];
+        const isMulti = post.type === 'multi' && post.images.length > 1;
+        const mainImg = post.images[0];
         
         return `
           <article class="product-card">
-            <div class="product-image-container">
-              ${isCarousel ? `
-                <div class="product-images-grid">
-                  ${post.images.slice(0, 4).map((img, i) => 
-                    `<img src="${img}" alt="Producto" class="product-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400/f5f5f5/666?text=📦'">`
-                  ).join('')}
+            <div class="product-img-wrap">
+              ${isMulti ? `
+                <div class="multi-grid">
+                  ${post.images.slice(0, 4).map(img => `
+                    <img src="${img}" alt="Producto Velvet Gift" class="product-img" loading="lazy">
+                  `).join('')}
                 </div>
-                <div class="carousel-indicator">📷 ${post.images.length}</div>
+                <div class="img-count">📷 ${post.images.length}</div>
               ` : `
-                <img src="${firstImage}" alt="Producto" class="product-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400/f5f5f5/666?text=📦'">
+                <img src="${mainImg}" alt="Producto Velvet Gift" class="product-img" loading="lazy">
               `}
             </div>
-            <div class="product-actions">
-              <span class="action-btn heart">❤️ ${post.likes}</span>
-              <span class="action-btn">💬 0</span>
-            </div>
-            <div class="product-content">
+            <div class="product-info">
               <p class="product-caption">${post.caption}</p>
-              <p class="product-date">${date}</p>
+              <div class="product-meta">
+                <div class="product-stats">
+                  <span class="product-stat">❤️ ${post.likes}</span>
+                </div>
+                <span class="product-date">${post.date}</span>
+              </div>
             </div>
           </article>
         `;
